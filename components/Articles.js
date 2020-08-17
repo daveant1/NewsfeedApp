@@ -1,52 +1,47 @@
 import React from "react";
-import { FlatList, Text, Linking, StyleSheet, View, Image } from "react-native";
-
+import { FlatList, Text, Linking, StyleSheet, View, Image, List} from "react-native";
+import {fetchImage} from "./API"
 const extractKey = ({ url }) => url;
 
 const Articles = (props) => {
-  return (
-    <View>
+    // fetchImage();
+    // console.log(props.articles)
+    return (
+        <View style={styles.container}>
         <FlatList 
-            contentContainerStyle = {styles.container}
             data = {props.articles}
-
             renderItem = { ({item}) => {
             return(
-                <View style={styles.item}>
-                <Text 
-                    style={styles.text}
-                    onPress={() => Linking.openURL(item.url)}>
-                    {item.title}</Text>
-                <Image source = {{ uri : item.urlToImage }} style={styles.image}/>
+                <View style={styles.item}> 
+                    <Text style={styles.text} onPress={() => Linking.openURL(item.url)}>
+                        {item.title}</Text>
+                    <Image source = {{ uri : item.urlToImage }} style={styles.image}/>
+                console.log(item.urlToImage)
                 </View>
             );
             }}
-
-    keyExtractor = {extractKey}
-    />
-    </View>
-  );
+        keyExtractor = {extractKey}/>
+        </View>
+    );
 };
 
 export default Articles;
 
 const styles = StyleSheet.create({
     container:{
-        flex:1,
-        padding: 20,
+        flex: 1,
     },
     item:{
-        flex: 1,
         flexDirection: "row",
         justifyContent: "space-between",
-        padding: 5
+        alignItems: "center",
+        paddingTop: 2, 
+        paddingBottom: 2,
     },
     text:{
-        flex: 2, padding: 10, backgroundColor: 'lightblue', fontSize: 18, fontWeight: "bold",
+        flex: 3, padding: 3, backgroundColor: 'lightblue', fontSize: 14, fontWeight: "bold",
     },
     image:{
         flex: 1
     }
-
-
 });

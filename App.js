@@ -3,7 +3,7 @@ import React, { useState, useEffect} from 'react';
 import  Header from './components/Header';
 import { StyleSheet, Text, View, Button } from 'react-native';
 
-import { fetchNews } from './components/API.js';
+import { fetchNews } from './components/API';
 import Articles from './components/Articles';
 // import Nav from 'react-bootstrap/Nav';
 
@@ -39,9 +39,8 @@ const App = () => {
     <View style={styles.container}>
       <Header title="Welcome!"/>
       <StatusBar style="auto" />
-      <Articles articles={articles} style={{flex:3}}>
-        <Button onPress={() => {setRef(!ref); alert("Page refreshed successfully.")}}title="Refresh" style={{flex:1}}/>
-      </Articles>
+      <Articles articles={articles}/>
+      <Button onPress={() => {setRef(!ref); alert("Page refreshed successfully.")}}title="Refresh"/>
     </View>
   );
 }
@@ -51,8 +50,8 @@ export default App;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    justifyContent: 'flex-start',
+    backgroundColor: 'black',
+    justifyContent: 'space-between',
   },
   bar: {
     height: 25,

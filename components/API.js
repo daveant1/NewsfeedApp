@@ -9,3 +9,8 @@ export const fetchNews = async (keyword) => {
     console.log("API fetched articles successfully!");
     return news_json;
 }
+
+// export const fetchImage = async (imageToURL) =>{
+//     const img = await fetch(`${imageToURL}`);
+//     console.log(img);
+// }
