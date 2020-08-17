@@ -4,7 +4,6 @@ import { FlatList, Text, Linking, StyleSheet, View, Image } from "react-native";
 const extractKey = ({ url }) => url;
 
 const Articles = (props) => {
-    console.log(props.articles);
   return (
     <View>
         <FlatList 

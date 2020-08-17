@@ -39,8 +39,9 @@ const App = () => {
     <View style={styles.container}>
       <Header title="Welcome!"/>
       <StatusBar style="auto" />
-      <Articles articles={articles}/>
-      <Button onPress={() => {setRef(!ref); alert("Page refreshed successfully.")}}title="Refresh"/>
+      <Articles articles={articles} style={{flex:3}}>
+        <Button onPress={() => {setRef(!ref); alert("Page refreshed successfully.")}}title="Refresh" style={{flex:1}}/>
+      </Articles>
     </View>
   );
 }
