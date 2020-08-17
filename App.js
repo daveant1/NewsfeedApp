@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React, {Component} from 'react';
 import  Header from './components/Header';
 import { StyleSheet, Text, View } from 'react-native';
-import Nav from 'react-bootstrap/Nav'
+// import Nav from 'react-bootstrap/Nav';
 
 
 const App = () => {
