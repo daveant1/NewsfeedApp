@@ -16,7 +16,6 @@ const Articles = (props) => {
                     <Text style={styles.text} onPress={() => Linking.openURL(item.url)}>
                         {item.title}</Text>
                     <Image source = {{ uri : item.urlToImage }} style={styles.image}/>
-                console.log(item.urlToImage)
                 </View>
             );
             }}
@@ -35,6 +34,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",
+        alignContent:"stretch",
         paddingTop: 2, 
         paddingBottom: 2,
     },
@@ -42,6 +42,9 @@ const styles = StyleSheet.create({
         flex: 3, padding: 3, backgroundColor: 'lightblue', fontSize: 14, fontWeight: "bold",
     },
     image:{
-        flex: 1
+        flex: 2,
+        alignSelf: "stretch",
+        width: undefined,
+        height: undefined,
     }
 });
